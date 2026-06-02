@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ViaGo — Investissement immobilier en nue-propriété</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --accent: #3d9b7a;
+      --accent-hover: #4db892;
+      --text: #f4f6f8;
+      --muted: #9aa8b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem 4rem;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(61, 155, 122, 0.25), transparent),
+        var(--bg);
+    }
+
+    .logo {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 6vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      max-width: 18ch;
+      margin-bottom: 1.25rem;
+    }
+
+    .tagline {
+      font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
+      color: var(--muted);
+      max-width: 36ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: inherit;
+      color: var(--bg);
+      background: var(--accent);
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .cta:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .cta:focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 3px;
+    }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      border-top: 1px solid var(--surface);
+    }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <p class="logo">ViaGo</p>
+    <h1>Investissez dans l'immobilier, ensemble</h1>
+    <p class="tagline">
+      Accédez à la nue-propriété mutualisée : diversifiez votre patrimoine sur des biens sélectionnés, à partir de petits montants.
+    </p>
+    <a href="#investir" class="cta">Investir maintenant</a>
+  </main>
+  <footer>
+    ViaGo — plateforme d'investissement immobilier mutualisé en nue-propriété
+  </footer>
+</body>
+</html>

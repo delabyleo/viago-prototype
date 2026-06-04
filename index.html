@@ -95,6 +95,71 @@
       outline-offset: 3px;
     }
 
+    .simulator {
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 22rem;
+      padding: 1.5rem;
+      background: var(--surface);
+      border-radius: 1rem;
+      text-align: left;
+    }
+
+    .simulator-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .simulator label {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .simulator-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .simulator input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid rgba(154, 168, 184, 0.25);
+      border-radius: 0.5rem;
+    }
+
+    .simulator input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .simulator-currency {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .simulator-result {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .simulator-result strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
     footer {
       padding: 1.5rem;
       text-align: center;
@@ -112,9 +177,49 @@
       Accédez à la nue-propriété mutualisée : diversifiez votre patrimoine sur des biens sélectionnés, à partir de petits montants.
     </p>
     <a href="#investir" class="cta">Investir maintenant</a>
+
+    <section id="investir" class="simulator" aria-labelledby="simulator-title">
+      <p id="simulator-title" class="simulator-title">Simulateur</p>
+      <label for="montant">Montant à investir</label>
+      <div class="simulator-input-wrap">
+        <input
+          type="number"
+          id="montant"
+          name="montant"
+          min="0"
+          step="100"
+          value="10000"
+          inputmode="numeric"
+        />
+        <span class="simulator-currency" aria-hidden="true">€</span>
+      </div>
+      <p class="simulator-result">
+        Votre rendement estimé : <strong id="rendement">500 €</strong>
+      </p>
+    </section>
   </main>
   <footer>
     ViaGo — plateforme d'investissement immobilier mutualisé en nue-propriété
   </footer>
+  <script>
+    const TAUX_FICTIF = 0.05;
+
+    const montantInput = document.getElementById("montant");
+    const rendementEl = document.getElementById("rendement");
+    const euroFormatter = new Intl.NumberFormat("fr-FR", {
+      style: "currency",
+      currency: "EUR",
+      maximumFractionDigits: 0,
+    });
+
+    function updateRendement() {
+      const montant = Math.max(0, Number(montantInput.value) || 0);
+      const rendement = montant * TAUX_FICTIF;
+      rendementEl.textContent = euroFormatter.format(rendement);
+    }
+
+    montantInput.addEventListener("input", updateRendement);
+    updateRendement();
+  </script>
 </body>
 </html>

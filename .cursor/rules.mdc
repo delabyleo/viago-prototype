@@ -1,0 +1,14 @@
+# Projet ViaGo
+
+## Contexte
+ViaGo est une plateforme d'investissement immobilier mutualisé en nue-propriété (B2C, early-stage).
+Le produit cible deux types d'utilisateurs : les investisseurs (30-45 ans, CSP+) et les vendeurs seniors (65-80 ans).
+
+## Stack technique
+HTML, CSS, JavaScript vanilla. Pas de framework pour l'instant.
+
+## Règles de génération
+- Code simple et lisible, pas de over-engineering
+- Commentaires en français
+- Design sobre : fond sombre, accent vert (#00C853), typographie claire
+- Toujours responsive mobile
